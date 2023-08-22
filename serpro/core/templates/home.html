@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Home
+{% endblock %}
+
+{% block content %}
+  <ul style="list-style: none;">
+    <li><a href="{% url 'listar_alunos_view' %}">Lista de Alunos</a></li>
+    <li><a href="{% url 'criar_aluno_view' %}">Inserir Aluno</a></li>
+    <li><a href="{% url 'relatorio_alunos_curso_view' %}">Relatório de Alunos por Curso</a></li>
+  </ul>
+{% endblock %}

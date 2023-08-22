@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Listagem de Alunos
+{% endblock %}
+
+{% block content %}
+  <h1>Relatório de Alunos por Curso</h1>
+  <p>
+    <a href="{% url 'home_view' %}">Voltar para a página inicial</a>
+  </p>
+  <form action="" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Mostrar Alunos do Curso Selecionado</button>
+  </form>
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>CPF</th>
+        <th>Número de Matrícula</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for aluno in alunos %}
+      <tr>
+        <td>{{aluno.nome}}</td>
+        <td>{{aluno.cpf}}</td>
+        <td>{{aluno.numero_matricula}}</td>
+      </tr>
+      {% empty %}
+      <tr>
+        <td colspan="8">Nenhum aluno encontrado.</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

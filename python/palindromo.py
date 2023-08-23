@@ -7,8 +7,9 @@ def palindromo(palavra):
   return 'S' if palavra == palavra[::-1] else 'N'
 
 
-print(palindromo('cleber'));
-print(palindromo('oi'));
-print(palindromo('radar'));
-print(palindromo('arara'));
-print(palindromo('ffddfff'));
+if __name__ == '__main__':
+  print(palindromo('cleber'));
+  print(palindromo('oi'));
+  print(palindromo('radar'));
+  print(palindromo('arara'));
+  print(palindromo('ffddfff'));

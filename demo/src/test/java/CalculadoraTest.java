@@ -50,6 +50,27 @@ public class CalculadoraTest {
     }
     
     @Test
+    public void dadaUmaFrase_entaoDeveMultiplicar2() {
+        Calculadora calculadora = new Calculadora();
+        double resultado = calculadora.calcular("0 vezes 4");
+        Assertions.assertEquals(resultado, 0);
+    }
+    
+    @Test
+    public void dadaUmaFrase_entaoDevePotenciar() {
+        Calculadora calculadora = new Calculadora();
+        double resultado = calculadora.calcular("2 elevado a 4");
+        Assertions.assertEquals(resultado, 16);
+    }
+    
+    @Test
+    public void dadaUmaFrase_entaoDevePotenciar2() {
+        Calculadora calculadora = new Calculadora();
+        double resultado = calculadora.calcular("2 elevado a 0");
+        Assertions.assertEquals(resultado, 1);
+    }
+    
+    @Test
     public void dadaUmaFrase_entaoDeveDarErro() {
         Calculadora calculadora = new Calculadora();
         Assertions.assertThrows(IllegalArgumentException.class, () -> {

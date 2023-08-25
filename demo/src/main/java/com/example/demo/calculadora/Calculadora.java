@@ -6,7 +6,6 @@ package com.example.demo.calculadora;
 
 import com.example.demo.calculadora.operacoes.FabricaOperacao;
 import com.example.demo.calculadora.operacoes.Operavel;
-import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -14,11 +13,13 @@ import java.util.regex.Pattern;
  *
  * @author cleber
  */
-public class Calculadora {
+public abstract class Calculadora {
 
     private static final String PADRAO
             = "(-?\\d+)\\s*(mais|menos|vezes|dividido\\s*por|elevado\\s*a)\\s*(-?\\d+)";
 
+    public abstract void saudar();
+    
     public double calcular(String frase) {
         Pattern padrao = Pattern.compile(PADRAO);
         Matcher resultado = padrao.matcher(frase);

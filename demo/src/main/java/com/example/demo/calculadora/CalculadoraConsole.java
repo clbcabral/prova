@@ -12,6 +12,7 @@ import java.util.Scanner;
  */
 public class CalculadoraConsole extends Calculadora {
 
+    @Override
     public void saudar() {
         System.out.println("Bem-vindo à calculadora console!");
         System.out.println("");
@@ -32,8 +33,4 @@ public class CalculadoraConsole extends Calculadora {
         }
     }
     
-    public static void main(String[] args) {
-        CalculadoraConsole calculadora = new CalculadoraConsole();
-        calculadora.saudar();
-    }
 }

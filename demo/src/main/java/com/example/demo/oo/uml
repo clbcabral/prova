@@ -1,0 +1,33 @@
+@startuml
+
+skin rose
+
+title Relationships - Class Diagram
+
+abstract class Animal {
+  -String nome
+  +Animal(String nome)
+  +void comer()
+  +void dormir()
+  +String getNome()
+}
+
+interface Barulhento {
+  +void fazBarulho()
+}
+
+class Cachorro extends Animal implements Barulhento {
+  +Cachorro()
+  +Cachorro(String nome)
+  +void latir()
+  +void fazBarulho()
+}
+
+class Gato extends Animal implements Barulhento {
+  +Gato()
+  +Gato(String nome)
+  +void ronronar()
+  +void fazBarulho()
+}
+
+@enduml
